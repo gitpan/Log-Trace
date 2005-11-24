@@ -12,7 +12,7 @@ use vars qw($VERSION @EXPORT);
 use strict qw(subs vars);
 use Fcntl ':flock';
 
-$VERSION = sprintf"%d.%03d", q$Revision: 1.69 $ =~ /: (\d+)\.(\d+)/;
+$VERSION = sprintf"%d.%03d", q$Revision: 1.70 $ =~ /: (\d+)\.(\d+)/;
 
 #################################################
 # Importing
@@ -556,7 +556,7 @@ sub _timestamp
 {
 	my ($epoch, $usec) = _gettimeofday();
 	my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime($epoch);
-	$year+=1900; $mon+=1; $mon = 9;
+	$year+=1900; $mon+=1;
 	my $stamp = sprintf("%4d-%02d-%02d %02d:%02d:%02d",$year,$mon,$mday,$hour,$min,$sec);
 	$stamp .= sprintf(".%.6d",$usec) if(defined $usec);
 	return $stamp;
@@ -909,7 +909,7 @@ L<Log::Trace::Manual> - A guide to using Log::Trace
 
 =head1 VERSION
 
-$Revision: 1.69 $ on $Date: 2005/01/12 13:58:13 $ by $Author: johna $
+$Revision: 1.70 $ on $Date: 2005/11/01 11:32:59 $ by $Author: colinr $
 
 =head1 AUTHOR
 

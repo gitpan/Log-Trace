@@ -17,5 +17,8 @@ t/trace_functions.t
 t/trace_levels.t
 t/trace_print.t
 t/trace_warn.t
+t/pod_coverage.t
 t/lib/Test_DeepImport.pm
 t/lib/Test_DelayedImport.pm
+t/pod.t
+META.yml                                 Module meta-data (added by MakeMaker)

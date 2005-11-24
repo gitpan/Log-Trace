@@ -294,8 +294,8 @@ have been wired to by the caller.
 
 		# Wire the component we've created into whatever
 		# our TRACE etc function has been wired to
-		*{$type::TRACE} = \&MyApp::Reader::TRACE;
-		*{$type::DUMP} = \&MyApp::Reader::DUMP;
+		*{"$type\::TRACE"} = \&MyApp::Reader::TRACE;
+		*{"$type\::DUMP"} = \&MyApp::Reader::DUMP;
 
 		return $type->new(@_);
 	}
@@ -405,6 +405,6 @@ incurred if the constant has a false value:
 
 =head1 REVISION
 
-$Revision: 1.8 $
+$Revision: 1.9 $
 
 =cut

@@ -1,5 +1,5 @@
 #!/usr/local/bin/perl -w
-# $Id: trace_dump.t,v 1.3 2004/11/23 14:07:31 simonf Exp $
+# $Id: trace_dump.t,v 1.4 2005/11/24 10:53:12 tonyh Exp $
 
 use strict;
 use Test::More tests => 9;
@@ -55,8 +55,8 @@ SKIP: {
     is ($output, $expected, 'simple DUMP with DS');
 
     $output = '';
-    DUMP('prepended message', { somewhat => [qw(more complicated)] }, 'foo');
-    $expected = "prepended message: {'somewhat' => ['more','complicated']}\nfoo\n";
+    DUMP('prepended message', { somewhat => [qw(more complicated)] }, { 'foo' => 'bar' });
+    $expected = "prepended message: {'somewhat' => ['more','complicated']}\n{'foo' => 'bar'}\n";
     is($output, $expected, 'dump with a comment');
 
     $output = '';
